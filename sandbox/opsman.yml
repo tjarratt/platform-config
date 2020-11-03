@@ -1,0 +1,15 @@
+opsman-configuration:
+  gcp:
+    boot_disk_size: 100
+    custom_cpu: 4
+    custom_memory: 16
+    gcp_service_account: ((opsman-service-account-key))
+    project: cso-education-butter
+    public_ip: 35.239.197.21
+    region: us-central1
+    ssh_public_key: |
+      ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDle8Tb1zhg+8xR+jLcUjPIIV6DmoWqkXqR1zWe9rXGcfzXcntURaa9QnMIRmxUE3XRAZaGjDA6o3nuMEps+JgsNXHjtV9wSQ05iRmVk+TpbDHlgJ/Pt8S35dbi3jeXEIrFGywFf/YMDx5XoJNfU3zGYdJ6kD6foRdQL7VbgWtxcEQEgL683rtbPR2m8L8kR0eJjtILU3eUu5ywmgfnjKbEA1pmDjVMC8nMg6/wFJSG9mn0JkHRRgHZDkB6L30gbEc+rHutOw116F3b5/8x+D3q2ENY1z6dCNdRGFD5LbhYV11BHg5Z5/SlxbuSYZruICVru4wQiUSLura746XjrYyl0Rk/d5M9SQAP2mHRjjJ/nNZqcpAKx9Ur+8ig8scTjHnN3Kql8PHhK3ud8EiM/Wi6A3C5fSPijPbf8NFcYQFfjquwqe8BjpXpwukmyXdou35V1T4rKReHydrXCTLlWWtsSpFEuzidko9bv217H5Mlx1Soau1J6sic5eDAyW5PrP3woc8fL+s9n8SjXx3N0xB1gLtAhoSp1jwQnuGSrnaULrNSbfitd64aohwLLCoGQPC92l/mpdOVgdjqr9Tm5u/4moAQkq+XxbOvVEueVAVr6ZcbkdiGnYYjfKYv4jlGy4TPdRk3rj6cSf5SjxqWabvHK6bwBg5KSoZn7OQYf79LNw==
+    tags: sandbox-ops-manager
+    vm_name: sandbox-ops-manager-vm
+    vpc_subnet: sandbox-management-subnet
+    zone: us-central1-a
