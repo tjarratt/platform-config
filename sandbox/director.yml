@@ -1,0 +1,50 @@
+az-configuration:
+- name: us-central1-a
+- name: us-central1-b
+- name: us-central1-c
+network-assignment:
+  network:
+    name: management
+  singleton_availability_zone:
+    name: us-central1-a
+networks-configuration:
+  icmp_checks_enabled: false
+  networks:
+  - name: management
+    subnets:
+    - availability_zone_names:
+      - us-central1-a
+      - us-central1-b
+      - us-central1-c
+      cidr: 10.0.0.0/26
+      dns: 169.254.169.254
+      gateway: 10.0.0.1
+      iaas_identifier: sandbox-network/sandbox-management-subnet/us-central1
+      reserved_ip_ranges: 10.0.0.1-10.0.0.9
+  - name: services
+    subnets:
+    - availability_zone_names:
+      - us-central1-a
+      - us-central1-b
+      - us-central1-c
+      cidr: 10.0.8.0/24
+      dns: 169.254.169.254
+      gateway: 10.0.8.1
+      iaas_identifier: sandbox-network/sandbox-services-subnet/us-central1
+      reserved_ip_ranges: 10.0.8.1-10.0.8.9
+properties-configuration:
+  director_configuration:
+    ntp_servers_string: 169.254.169.254
+    post_deploy_enabled: true
+    resurrector_enabled: true
+  iaas_configuration:
+    auth_json: ((opsman-service-account-key))
+    default_deployment_tag: sandbox-vms
+    project: cso-education-butter
+  security_configuration:
+    generate_vm_passwords: true
+    trusted_certificates: ""
+resource-configuration:
+  compilation:
+    instance_type:
+      id: xlarge.disk
